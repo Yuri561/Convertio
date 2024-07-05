@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaFilePdf, FaFileVideo, FaFileAudio, FaArchive, FaEllipsisH, FaImage, FaBook, FaFileCode, FaDatabase, FaCalendar, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFilePdf, FaFileVideo, FaFileAudio, FaArchive, FaEllipsisH, FaImage, FaBook, FaFileCode, FaDatabase, FaCalendar, FaEnvelope, FaUser, FaChevronDown } from 'react-icons/fa';
 import './index.css';
 import './App.css';
 import Logo from '/1.png';
@@ -29,6 +29,7 @@ function App() {
             </Routes>
           </main>
         </div>
+        <Footer />
       </div>
     </Router>
   );
@@ -54,7 +55,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <li><Link to="/" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Home</Link></li>
           <li>
             <button onClick={() => toggleCategory('document')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaFilePdf className="inline-block mr-2" /> Document Converters
+              <FaFilePdf className="inline-block mr-2" /> Document Converters <FaChevronDown className="inline-block ml-2" />
             </button>
             {openCategory === 'document' && (
               <ul className="ml-4 space-y-2">
@@ -65,7 +66,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('media')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaFileVideo className="inline-block mr-2" /> Media Converters
+              <FaFileVideo className="inline-block mr-2" /> Media Converters <FaChevronDown className="inline-block ml-2" />
             </button>
             {openCategory === 'media' && (
               <ul className="ml-4 space-y-2">
@@ -78,7 +79,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('archive')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaArchive className="inline-block mr-2" /> Archive Converters
+              <FaArchive className="inline-block mr-2" /> Archive Converters <FaChevronDown className="inline-block ml-2" />
             </button>
             {openCategory === 'archive' && (
               <ul className="ml-4 space-y-2">
@@ -88,7 +89,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('others')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaEllipsisH className="inline-block mr-2" /> Other Converters
+              <FaEllipsisH className="inline-block mr-2" /> Other Converters <FaChevronDown className="inline-block ml-2" />
             </button>
             {openCategory === 'others' && (
               <ul className="ml-4 space-y-2">
@@ -123,7 +124,7 @@ const Navbar = ({ setSidebarOpen }) => {
         </button>
         <div className="relative"> 
           <button className="focus:outline-none">
-            <img src="https://via.placeholder.com/40" alt="User avatar" className="rounded-full" />
+            <FaUser className="h-8 w-8 rounded-full text-white" />
           </button>
           <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg hidden">
             <Link to="/profile" className="block px-4 py-2">Your profile</Link>
@@ -132,6 +133,14 @@ const Navbar = ({ setSidebarOpen }) => {
         </div>
       </div>
     </header>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="bg-orange-500 text-white p-4 flex justify-center items-center">
+      <p>© 2024 Convertio. All rights reserved.</p>
+    </footer>
   );
 };
 
