@@ -55,7 +55,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <li><Link to="/" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Home</Link></li>
           <li>
             <button onClick={() => toggleCategory('document')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaFilePdf className="inline-block mr-2" /> Document Converters <FaChevronDown className="inline-block ml-2" />
+              <FaFilePdf className="inline-block mr-2" /> Docs Folder <FaChevronDown className="inline-block ml-3" />
             </button>
             {openCategory === 'document' && (
               <ul className="ml-4 space-y-2">
@@ -66,7 +66,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('media')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaFileVideo className="inline-block mr-2" /> Media Converters <FaChevronDown className="inline-block ml-2" />
+              <FaFileVideo className="inline-block mr-2" /> Media Folder <FaChevronDown className="inline-block ml-3" />
             </button>
             {openCategory === 'media' && (
               <ul className="ml-4 space-y-2">
@@ -79,7 +79,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('archive')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaArchive className="inline-block mr-2" /> Archive Converters <FaChevronDown className="inline-block ml-2" />
+              <FaArchive className="inline-block mr-2" /> Archive Folder <FaChevronDown className="inline-block ml-3" />
             </button>
             {openCategory === 'archive' && (
               <ul className="ml-4 space-y-2">
@@ -89,7 +89,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </li>
           <li>
             <button onClick={() => toggleCategory('others')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
-              <FaEllipsisH className="inline-block mr-2" /> Other Converters <FaChevronDown className="inline-block ml-2" />
+              <FaEllipsisH className="inline-block mr-2" /> Other Converters <FaChevronDown className="inline-block ml-3" />
             </button>
             {openCategory === 'others' && (
               <ul className="ml-4 space-y-2">
