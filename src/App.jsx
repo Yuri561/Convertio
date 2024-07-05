@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFilePdf, FaFileVideo, FaFileAudio, FaArchive, FaEllipsisH, FaImage, FaBook, FaFileCode, FaDatabase, FaCalendar, FaEnvelope } from 'react-icons/fa';
 import './index.css';
 import './App.css';
 import Logo from '/1.png';
@@ -35,6 +35,12 @@ function App() {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+  const [openCategory, setOpenCategory] = useState(null);
+
+  const toggleCategory = (category) => {
+    setOpenCategory(openCategory === category ? null : category);
+  };
+
   return (
     <div className={`fixed inset-y-0 left-0 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-200 ease-in-out bg-gray-800 text-white z-50 md:relative md:translate-x-0`}>
       <div className="p-4 flex justify-between items-center md:hidden">
@@ -43,13 +49,60 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           <FaTimes className="h-6 w-6" />
         </button>
       </div>
-      <nav className="space-y-2 p-4">
+      <nav className="space-y-2 p-4 overflow-y">
         <ul>
-          <li><Link to="/" className="block p-2 rounded hover:bg-gray-700" onClick={() => setSidebarOpen(false)}>Home</Link></li>
-          <li><Link to="/pdf-converter" className="block p-2 rounded hover:bg-gray-700" onClick={() => setSidebarOpen(false)}>Convert to PDF</Link></li>
-          <li><Link to="/mp4-to-mp3" className="block p-2 rounded hover:bg-gray-700" onClick={() => setSidebarOpen(false)}>MP4 to MP3</Link></li>
-          <li><Link to="/word-converter" className="block p-2 rounded hover:bg-gray-700" onClick={() => setSidebarOpen(false)}>Convert to Word</Link></li>
-          {/* Add more links here as you add more tools */}
+          <li><Link to="/" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Home</Link></li>
+          <li>
+            <button onClick={() => toggleCategory('document')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
+              <FaFilePdf className="inline-block mr-2" /> Document Converters
+            </button>
+            {openCategory === 'document' && (
+              <ul className="ml-4 space-y-2">
+                <li><Link to="/pdf-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Convert to PDF</Link></li>
+                <li><Link to="/word-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Convert to Word</Link></li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <button onClick={() => toggleCategory('media')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
+              <FaFileVideo className="inline-block mr-2" /> Media Converters
+            </button>
+            {openCategory === 'media' && (
+              <ul className="ml-4 space-y-2">
+                <li><Link to="/mp4-to-mp3" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>MP4 to MP3</Link></li>
+                <li><Link to="/video-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Video Converter</Link></li>
+                <li><Link to="/audio-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Audio Converter</Link></li>
+                <li><Link to="/image-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Image Converter</Link></li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <button onClick={() => toggleCategory('archive')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
+              <FaArchive className="inline-block mr-2" /> Archive Converters
+            </button>
+            {openCategory === 'archive' && (
+              <ul className="ml-4 space-y-2">
+                <li><Link to="/zip-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>ZIP Converter</Link></li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <button onClick={() => toggleCategory('others')} className="block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left">
+              <FaEllipsisH className="inline-block mr-2" /> Other Converters
+            </button>
+            {openCategory === 'others' && (
+              <ul className="ml-4 space-y-2">
+                <li><Link to="/ebook-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>eBook Converter</Link></li>
+                <li><Link to="/subtitle-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Subtitle Converter</Link></li>
+                <li><Link to="/spreadsheet-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Spreadsheet Converter</Link></li>
+                <li><Link to="/font-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Font Converter</Link></li>
+                <li><Link to="/code-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Code Converter</Link></li>
+                <li><Link to="/database-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Database Converter</Link></li>
+                <li><Link to="/calendar-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Calendar Converter</Link></li>
+                <li><Link to="/email-converter" className="block p-2 rounded hover:bg-gray-700 border my-2" onClick={() => setSidebarOpen(false)}>Email Converter</Link></li>
+              </ul>
+            )}
+          </li>
         </ul>
       </nav>
     </div>
