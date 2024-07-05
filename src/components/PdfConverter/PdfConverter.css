@@ -1,0 +1,21 @@
+/* PdfConverter.css */
+.pdf-converter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.drag-drop-area {
+  transition: background-color 0.3s ease;
+}
+
+.drag-drop-area:hover {
+  background-color: #ffedd5; /* Light orange */
+}
+
+.files-grid .file-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #f97316; /* Orange */
+  border-radius: 8px;
+}
