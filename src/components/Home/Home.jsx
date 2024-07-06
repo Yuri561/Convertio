@@ -96,7 +96,7 @@ const Home = () => {
 							id='carousel-icons'
 							className='relative w-full h-96 bg-blue-900 rounded-lg shadow-lg overflow-hidden'
 							data-carousel='static'
-							data-aos='fade-left'>
+							>
 							<div className='relative h-full overflow-hidden rounded-lg shadow-lg'>
 								<div
 									className='grid grid-cols-2 gap-5 duration-700 ease-in-out my-12'
