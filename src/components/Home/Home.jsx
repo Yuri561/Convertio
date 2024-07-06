@@ -104,7 +104,7 @@ const Home = () => {
 							data-aos='fade-left'>
 							<div className='relative h-full overflow-hidden rounded-lg shadow-lg'>
 								<div
-									className='grid grid-cols-2 gap-5 duration-700 ease-in-out'
+									className='grid grid-cols-2 gap-5 duration-700 ease-in-out my-12'
 									data-carousel-item>
 									<div className='card'>
 										<img
@@ -142,8 +142,8 @@ const Home = () => {
 									</div>
 								</div>
 								<div
-									className='grid grid-cols-2 gap-5 duration-700 ease-in-out hidden'
-									data-carousel-item>
+                  className='grid grid-cols-2 gap-5 duration-700 ease-in-out '
+                  data-carousel-item  >
 									<div className='card'>
 										<img
 											src={imgIcon}
