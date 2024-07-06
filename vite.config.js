@@ -1,16 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
 	optimizeDeps: {
-		include: ['@ffmpeg/ffmpeg'],
+		include: ['@ffmpeg/ffmpeg', 'aos'],
 	},
-	rollupOptions: {
-		external: ['aos'],
-	},
-	alias: {
-		aos: 'aos/dist/aos.js',
+	resolve: {
+		alias: {
+			aos: 'aos',
+			'aos/dist/aos.css': 'aos/dist/aos.css',
+		},
 	},
 });
