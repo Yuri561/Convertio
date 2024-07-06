@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import {
-	FaBars,
-	FaTimes,
-	FaFilePdf,
-	FaFileVideo,
-	FaArchive,
-	FaEllipsisH,
-	FaUser,
-	FaChevronDown,
-} from 'react-icons/fa';
+import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
+import Sidebar from './components/Sidebar/Sidebar'; // Adjust the path as needed
 import './index.css';
 import './App.css';
 import Logo from '/1.png';
@@ -19,7 +11,6 @@ import Mp4ToMp3Converter from './components/MP4toMP3/MP4toMP3';
 import Home from './components/Home/Home';
 import WordConverter from './components/WordConverter/WordConverter';
 import ImageConverter from './components/ImageConverter/ImageConverter';
-
 import ZipConverter from './components/ZipConverter/ZipConverter';
 import EbookConverter from './components/EbookConverter/EbookConverter';
 import SpreadsheetConverter from './components/SpreadsheetConverter/SpreadsheetConverter';
@@ -57,162 +48,6 @@ function App() {
 	);
 }
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
-	const [openCategory, setOpenCategory] = useState(null);
-
-	const toggleCategory = (category) => {
-		setOpenCategory(openCategory === category ? null : category);
-	};
-
-	return (
-		<div
-			className={`fixed inset-y-0 left-0 transform ${
-				sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-			} transition-transform duration-200 ease-in-out bg-gray-800 text-white z-50 md:relative md:translate-x-0`}>
-			<div className='p-4 flex justify-between items-center md:hidden'>
-				<h2 className='text-2xl font-bold'>Convertio</h2>
-				<button
-					onClick={() => setSidebarOpen(false)}
-					className='text-white focus:outline-none'>
-					<FaTimes className='h-6 w-6' />
-				</button>
-			</div>
-			<nav className='space-y-2 p-4'>
-				<ul>
-					<li>
-						<Link
-							to='/'
-							className='block p-2 rounded hover:bg-gray-700 border my-2'
-							onClick={() => setSidebarOpen(false)}>
-							Home
-						</Link>
-					</li>
-					<li>
-						<button
-							onClick={() => toggleCategory('document')}
-							className='block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left'>
-							<FaFilePdf className='inline-block mr-2' /> Documents
-							<FaChevronDown className='inline-block ml-3' />
-						</button>
-						{openCategory === 'document' && (
-							<ul className='ml-4 space-y-2'>
-								<li>
-									<Link
-										to='/pdf-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Convert to PDF
-									</Link>
-								</li>
-								<li>
-									<Link
-										to='/word-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Convert to Word
-									</Link>
-								</li>
-							</ul>
-						)}
-					</li>
-					<li>
-						<button
-							onClick={() => toggleCategory('media')}
-							className='block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left'>
-							<FaFileVideo className='inline-block mr-2' /> Media
-							<FaChevronDown className='inline-block ml-3' />
-						</button>
-						{openCategory === 'media' && (
-							<ul className='ml-4 space-y-2'>
-								<li>
-									<Link
-										to='/mp4-to-mp3'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										MP4 to MP3
-									</Link>
-								</li>
-								<li>
-									<Link
-										to='/image-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Image Converter
-									</Link>
-								</li>
-							</ul>
-						)}
-					</li>
-					<li>
-						<button
-							onClick={() => toggleCategory('archive')}
-							className='block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left'>
-							<FaArchive className='inline-block mr-2' /> Archive
-							<FaChevronDown className='inline-block ml-3' />
-						</button>
-						{openCategory === 'archive' && (
-							<ul className='ml-4 space-y-2'>
-								<li>
-									<Link
-										to='/zip-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										ZIP Converter
-									</Link>
-								</li>
-							</ul>
-						)}
-					</li>
-					<li>
-						<button
-							onClick={() => toggleCategory('others')}
-							className='block p-2 rounded hover:bg-gray-700 border my-2 w-full text-left'>
-							<FaEllipsisH className='inline-block mr-2' /> Other Converters
-							<FaChevronDown className='inline-block ml-3' />
-						</button>
-						{openCategory === 'others' && (
-							<ul className='ml-4 space-y-2'>
-								<li>
-									<Link
-										to='/ebook-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										eBook Converter
-									</Link>
-								</li>
-								<li>
-									<Link
-										to='/subtitle-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Subtitle Converter
-									</Link>
-								</li>
-								<li>
-									<Link
-										to='/spreadsheet-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Spreadsheet Converter
-									</Link>
-								</li>
-								<li>
-									<Link
-										to='/code-converter'
-										className='block p-2 rounded hover:bg-gray-700 border my-2'
-										onClick={() => setSidebarOpen(false)}>
-										Code Converter
-									</Link>
-								</li>
-							</ul>
-						)}
-					</li>
-				</ul>
-			</nav>
-		</div>
-	);
-};
-
 const Navbar = ({ setSidebarOpen }) => {
 	return (
 		<header className='flex justify-between items-center p-4 nav-color shadow'>
@@ -236,10 +71,10 @@ const Navbar = ({ setSidebarOpen }) => {
 						<FaUser className='h-8 w-8 rounded-full text-white' />
 					</button>
 					<div className='absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg hidden'>
-						<Link to='/profile' className=' px-4 py-2'>
+						<Link to='/profile' className='px-4 py-2'>
 							Your profile
 						</Link>
-						<Link to='/sign-out' className=' px-4 py-2'>
+						<Link to='/sign-out' className='px-4 py-2'>
 							Sign out
 						</Link>
 					</div>

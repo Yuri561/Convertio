@@ -45,7 +45,7 @@ const SpreadsheetConverter = () => {
 
 	return (
 		<div
-			className='spreadsheet-converter-container p-6 bg-gray-100 min-h-screen'
+			className='spreadsheet-converter-container p-6 bg-gray-900 min-h-screen'
 			data-aos='zoom-in'>
 			<h1
 				className='text-4xl font-extrabold mb-4 text-orange-500'

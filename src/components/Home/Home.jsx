@@ -11,7 +11,6 @@ import zipIcon from '../../../public/zipIcon.png';
 import './Home.css';
 
 const Home = () => {
-	
 	useEffect(() => {
 		const carousels = document.querySelectorAll('[data-carousel]');
 		carousels.forEach((carousel) => {
@@ -54,26 +53,21 @@ const Home = () => {
 	}, []);
 
 	return (
-		<section className='bg-gray-900 min-h-screen border-l'>
+		<section className='bg-gray-900 min-h-screen border-l' data-aos='zoom-in'>
 			<div className='container mx-auto px-4 py-16'>
 				<div className='grid lg:grid-cols-12 gap-8'>
 					<div className='lg:col-span-7'>
-						<h1
-							className='text-5xl font-extrabold text-white mb-8'
-							data-aos='fade-right'>
+						<h1 className='text-5xl font-extrabold text-white mb-8'>
 							Ultimate <span className='text-orange-500'>Conversion</span> Tool
 							for All Your Needs
 						</h1>
-						<p className='text-lg text-gray-400 mb-8' data-aos='fade-left'>
+						<p className='text-lg text-gray-400 mb-8'>
 							Convert documents, media, and more with ease. Our all-in-one
 							conversion tool helps you transform files to the formats you need
 							in just a few clicks.
 						</p>
 						<div className='flex flex-wrap items-center space-x-4'>
-							<Link
-								to='/pdf-converter/'
-								className='btn btn-primary'
-								data-aos='fade-up'>
+							<Link to='/pdf-converter/' className='btn btn-primary'>
 								Get started
 								<svg
 									className='w-5 h-5 ml-2'
@@ -86,7 +80,7 @@ const Home = () => {
 										clipRule='evenodd'></path>
 								</svg>
 							</Link>
-							<a href='#' className='btn btn-secondary' data-aos='fade-up'>
+							<a href='#' className='btn btn-secondary'>
 								Blog
 							</a>
 						</div>
@@ -95,8 +89,7 @@ const Home = () => {
 						<div
 							id='carousel-icons'
 							className='relative w-full h-96 bg-blue-900 rounded-lg shadow-lg overflow-hidden'
-							data-carousel='static'
-							>
+							data-carousel='static'>
 							<div className='relative h-full overflow-hidden rounded-lg shadow-lg'>
 								<div
 									className='grid grid-cols-2 gap-5 duration-700 ease-in-out my-12'
@@ -137,8 +130,8 @@ const Home = () => {
 									</div>
 								</div>
 								<div
-                  className='grid grid-cols-2 gap-5 duration-700 ease-in-out '
-                  data-carousel-item  >
+									className='grid grid-cols-2 gap-5 duration-700 ease-in-out'
+									data-carousel-item>
 									<div className='card'>
 										<img
 											src={imgIcon}

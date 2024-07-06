@@ -56,7 +56,7 @@ const MP4toMP3 = () => {
 
 	return (
 		<div
-			className='mp4-to-mp3-converter-container p-6 bg-gray-100 min-h-screen'
+			className='mp4-to-mp3-converter-container p-6 bg-gray-900 min-h-screen'
 			data-aos='zoom-in'>
 			<h1
 				className='text-4xl font-extrabold mb-4 text-orange-500'
