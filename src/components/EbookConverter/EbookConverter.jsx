@@ -25,8 +25,10 @@ const EbookConverter = () => {
 
 	return (
 		<div className='p-6'>
-			<h1 className='text-3xl font-bold mb-4'>eBook Converter</h1>
-			<p className='mb-4'>
+			<h1 className='text-4xl font-extrabold mb-4 text-orange-500'>
+				eBook Converter
+			</h1>
+			<p className='mb-4 text-lg mb-8 text-gray-700' data-aos='slide-right'>
 				Convert your eBooks to different formats with ease.
 			</p>
 			<div

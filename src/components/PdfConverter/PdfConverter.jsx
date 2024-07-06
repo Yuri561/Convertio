@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaFilePdf, FaUpload, FaFile } from 'react-icons/fa';
 import { PDFDocument } from 'pdf-lib';
-import './PdfConverter.css';
+
 
 
 

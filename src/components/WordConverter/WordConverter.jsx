@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import { FaFileWord, FaUpload } from 'react-icons/fa';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
-import './WordConverter.css';
+
 
 
 const WordConverter = () => {
