@@ -8,15 +8,10 @@ import imgIcon from '../../../public/photoIcon.png';
 import audioIcon from '../../../public/audioIcon.png';
 import videoIcon from '../../../public/videoIcon.png';
 import zipIcon from '../../../public/zipIcon.png';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import './Home.css';
 
 const Home = () => {
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
-
+	
 	useEffect(() => {
 		const carousels = document.querySelectorAll('[data-carousel]');
 		carousels.forEach((carousel) => {
