@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaFileVideo, FaUpload, FaFileAudio } from 'react-icons/fa';
 import './Mp4ToMp3.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const MP4toMP3 = () => {
 	const [files, setFiles] = useState([]);
@@ -10,8 +9,6 @@ const MP4toMP3 = () => {
 	const [ffmpeg, setFfmpeg] = useState(null);
 
 	useEffect(() => {
-		AOS.init({ duration: 1000 });
-
 		const loadFFmpeg = async () => {
 			const { createFFmpeg, fetchFile } = await import(
 				'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.9.8'

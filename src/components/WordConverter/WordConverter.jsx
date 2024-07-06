@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { FaFileWord, FaUpload } from 'react-icons/fa';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
 import './WordConverter.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const WordConverter = () => {
 	const [files, setFiles] = useState([]);
 
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
+
 
 	const handleDrop = (event) => {
 		event.preventDefault();

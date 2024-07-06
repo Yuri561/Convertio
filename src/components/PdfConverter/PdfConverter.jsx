@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaFilePdf, FaUpload, FaFile } from 'react-icons/fa';
 import { PDFDocument } from 'pdf-lib';
 import './PdfConverter.css';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const PdfConverter = () => {
-useEffect(() => {
-			AOS.init({ duration: 1000 });
-}, []);
-  
+
   const [files, setFiles] = useState([]);
   const [pdfUrl, setPdfUrl] = useState(null);
 

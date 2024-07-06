@@ -3,13 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import * as XLSX from 'xlsx';
 import { FaUpload, FaFileExcel } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const SpreadsheetConverter = () => {
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
 
 	const [files, setFiles] = useState([]);
 	const [convertedFiles, setConvertedFiles] = useState([]);

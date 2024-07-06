@@ -1,16 +1,12 @@
 // src/components/ZipConverter/ZipConverter.jsx
 
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import JSZip from 'jszip';
 import { FaUpload, FaFile } from 'react-icons/fa';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 const ZipConverter = () => {
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
 
 	const [files, setFiles] = useState([]);
 	const [zipUrl, setZipUrl] = useState(null);

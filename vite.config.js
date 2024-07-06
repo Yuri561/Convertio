@@ -10,4 +10,7 @@ export default defineConfig({
 	rollupOptions: {
 		external: ['aos'],
 	},
+	alias: {
+		aos: 'aos/dist/aos.js',
+	},
 });
