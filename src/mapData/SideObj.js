@@ -35,38 +35,38 @@ const sideObj = [
 		],
 		icon: FaFileVideo,
 	},
-	{
-		title: 'Archives',
-		urls: [
-			{
-				title: 'Zip Archive',
-				url: '/zip-archive',
-			},
-		],
-		icon: FaArchive,
-	},
-	{
-		title: 'Others',
-		urls: [
-			{
-				title: 'eBook Converter',
-				url: '/ebook-converter',
-			},
-			{
-				title: 'Subtitle Converter',
-				url: '/subtitle-converter',
-			},
-			{
-				title: 'Spreadsheet Converter',
-				url: '/spreadsheet-converter',
-			},
-			{
-				title: 'Code Converter',
-				url: '/code-converter',
-			},
-		],
-		icon: FaEllipsisH,
-	},
+	// {
+	// 	title: 'Archives',
+	// 	urls: [
+	// 		{
+	// 			title: 'Zip Archive',
+	// 			url: '/zip-archive',
+	// 		},
+	// 	],
+	// 	icon: FaArchive,
+	// },
+	// {
+	// 	title: 'Others',
+	// 	urls: [
+	// 		{
+	// 			title: 'eBook Converter',
+	// 			url: '/ebook-converter',
+	// 		},
+	// 		{
+	// 			title: 'Subtitle Converter',
+	// 			url: '/subtitle-converter',
+	// 		},
+	// 		{
+	// 			title: 'Spreadsheet Converter',
+	// 			url: '/spreadsheet-converter',
+	// 		},
+	// 		{
+	// 			title: 'Code Converter',
+	// 			url: '/code-converter',
+	// 		},
+	// 	],
+	// 	icon: FaEllipsisH,
+	// },
 ];
 
 export default sideObj;
