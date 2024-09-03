@@ -35,16 +35,16 @@ const sideObj = [
 		],
 		icon: FaFileVideo,
 	},
-	// {
-	// 	title: 'Archives',
-	// 	urls: [
-	// 		{
-	// 			title: 'Zip Archive',
-	// 			url: '/zip-archive',
-	// 		},
-	// 	],
-	// 	icon: FaArchive,
-	// },
+	{
+		title: 'Archives',
+		urls: [
+			{
+				title: 'Zip Archive',
+				url: '/zip',
+			},
+		],
+		icon: FaArchive,
+	},
 	// {
 	// 	title: 'Others',
 	// 	urls: [

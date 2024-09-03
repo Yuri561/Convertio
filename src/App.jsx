@@ -11,7 +11,7 @@ import Mp4ToMp3Converter from './components/MP4toMP3/MP4toMP3';
 import Home from './components/Home/Home';
 import WordConverter from './components/WordConverter/WordConverter';
 import ImageConverter from './components/ImageConverter/ImageConverter';
-// import ZipConverter from './components/ZipConverter/ZipConverter';
+import ZipConverter from './components/ZipConverter/ZipConverter';
 // import EbookConverter from './components/EbookConverter/EbookConverter';
 // import SpreadsheetConverter from './components/SpreadsheetConverter/SpreadsheetConverter';
 // import CodeConverter from './components/CodeConverter/CodeConverter';
@@ -32,13 +32,13 @@ function App() {
 							<Route path='/mp4-to-mp3' element={<Mp4ToMp3Converter />} />
 							<Route path='/word-converter' element={<WordConverter />} />
 							<Route path='/image-converter' element={<ImageConverter />} />
-							{/* <Route path='/zip-converter' element={<ZipConverter />} />
-							<Route path='/ebook-converter' element={<EbookConverter />} />
+							<Route path='/zip' element={<ZipConverter />} />
+							{/* <Route path='/ebook-converter' element={<EbookConverter />} />
 							<Route
 								path='/spreadsheet-converter'
 								element={<SpreadsheetConverter />}
 							/>
-							<Route path='/code-converter' element={<CodeConverter />} /> */}
+							<Route path='/code-converter' element={<CodeConverter />} /> */} 
 						</Routes>
 					</main>
 				</div>
